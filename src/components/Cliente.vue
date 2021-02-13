@@ -6,7 +6,8 @@
         <hr>
         <p>Numero: {{cliente.numero}}</p>
         <p>Email: {{cliente.email}}</p>
-        <p>Idade: {{cliente.idade}}</p>
+        <p v-if="showIdade === true">Idade: {{cliente.idade}}</p>
+        <p v-else>O usuario escondeu a Idade!</p>
        </div>
    
     
@@ -22,10 +23,9 @@ export default {
     },
 
             props: {
-            nome: String,
-            email: String,
-            idade: Number,
-            cliente: Object
+                    
+            cliente: Object,
+            showIdade: Boolean
         }
 }
 

@@ -1,10 +1,13 @@
 <template>
   <div id="app">
-      <Cliente :cliente="clienteSilas"/>
- 
- //prop antiga
+      
+ <input type="text" v-model="clienteSilas.nome">
+ <input type="text" v-model="clienteSilas.email">
       <Cliente nome="Paulo Silveira" email="paulo@email.com.br" idade="51"/>
- 
+      <Cliente :cliente="clienteSilas" :showIdade="true"/>
+      <Cliente :cliente="clienteSilas" :showIdade="true"/>
+      <Cliente :cliente="clienteSilas" :showIdade="false"/>
+      <Cliente :cliente="clienteSilas" :showIdade="false"/>
      </div>
 </template>
 
