@@ -15,9 +15,7 @@ export default {
 
 <style>
     #produto{
-        color: indigo;
-        background: greenyellow;
-        max-width: 300px;
+              
     }
     #janela-prod{
         }
