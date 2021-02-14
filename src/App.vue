@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-      
- <input type="text" v-model="clienteSilas.nome">
- <input type="text" v-model="clienteSilas.email">
-      <Cliente nome="Paulo Silveira" email="paulo@email.com.br" idade="51"/>
-      <Cliente :cliente="clienteSilas" :showIdade="true"/>
-      <Cliente :cliente="clienteSilas" :showIdade="true"/>
-      <Cliente :cliente="clienteSilas" :showIdade="false"/>
-      <Cliente :cliente="clienteSilas" :showIdade="false"/>
+        <div v-for="(cliente,index) in clientes" :key="cliente.id">
+          <h4>{{index + 1}}</h4>
+            <Cliente :cliente="cliente"/>
+            <hr>
+            <h4>Edição: </h4>                  
+            <input type="text" v-model="cliente.nome">
+            <input type="text" v-model="cliente.email">
+        </div>
+
+
+
      </div>
 </template>
 
@@ -23,11 +26,50 @@ export default {
         nome: "Silas Ribeiro",
         email: "silas@email.com.br" ,
         idade: 25,
-        numero: 2021
+        
+      },
+      clientes: [
+        { 
+          id: 1,            
+              nome: "Silas Ribeiro",
+              email: "silas@email.com.br" ,
+              idade: 25
+      },
+    {
+      id: 2,
+              nome: "Paulo Junior",
+              email: "paulo@email.com.br" ,
+              idade: 24
 
+      },
+        
+    { 
+      id: 3,
+              nome: "Isaias Santos",
+              email: "isaias@email.com.br" ,
+              idade: 26
+
+          },
+    { 
+      id: 4,
+              nome: "Eunice Costa",
+              email: "nice@email.com.br" ,
+              idade: 51
+
+          },
+    { 
+      id: 5,
+              nome: "Lidiane Ribeiro",
+              email: "ldi@email.com.br" ,
+              idade: 18
+
+          },
+        
+        ]
       }
-    }
   },
+
+
   components: {
     Cliente,
     //Produto
