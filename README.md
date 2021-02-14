@@ -19,6 +19,8 @@ npm run build
 ```
 npm run lint
 ```
+### Install loadsh
 
+npm i --save lodash
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

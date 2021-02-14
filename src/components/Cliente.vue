@@ -28,12 +28,12 @@ export default {
         }
     },
 
-            props: {                
+        props: {                
             cliente: Object,
             showIdade: Boolean
         },
 
-            methods: {
+        methods: {
             mudarCor: function($event){
             console.log($event);
             this.isPremium =  !this.isPremium
@@ -55,7 +55,7 @@ export default {
        }
      },
 
-     computed: {
+        computed: {
          idEspecial: function(){
             return (this.cliente.nome + this.cliente.email + this.cliente.id).toUpperCase();
          }
