@@ -1,4 +1,4 @@
-# guiaclientes
+# Projeto feito com o intuito de aprender sobre VUE
 
 ## Project setup
 ```
