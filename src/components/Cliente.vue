@@ -1,5 +1,5 @@
 <template>
-<div :class="{'cliente': !isPremiun,'cliente-premiun': isPremiun}">
+<div :class="{'cliente': !isPremium,'cliente-premiun': isPremium}">
         <h4>Nome: {{cliente.nome}}</h4>
         <hr>
         <p>{{cliente.descricao}}</p>
@@ -9,6 +9,7 @@
         <p v-else>O usuario escondeu a Idade!</p>
 
     <button @click="mudarCor($event)">Mudar cor!</button>
+    <button @click="emitirEventoDelete">Deletar</button>
 
        </div>
    
@@ -20,7 +21,7 @@
 export default {
     data(){
         return {
-            isPremiun: false,
+            isPremium: false,
             descricao: "As oportunidades só são aproveitadas se você estiver preparado!"
         }
     },
@@ -31,11 +32,21 @@ export default {
         },
 
             methods: {
-                mudarCor: function($event){
-                    console.log($event);
-                this.isPremiun =  !this.isPremiun
-                },
+            mudarCor: function($event){
+            console.log($event);
+            this.isPremium =  !this.isPremium
+        },
+                emitirEventoDelete: function (){
+                console.log("Emitindo do Filho");
+                this.$emit("meDelete", {idDoCliente: this.cliente.id,curso: "node js", component:this});
+            },
+
+            testar: function(){
+                console.log("Testando para valer");
+                alert("Isso é um alert!")
+
             }
+        }
 }
 
 </script>
