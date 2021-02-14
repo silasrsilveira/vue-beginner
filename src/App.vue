@@ -1,6 +1,10 @@
 <template>
+
+
+
   <div id="app">
 
+<button class="button is-danger">As oportunidades só são aproveitadas se você estiver preparado</button>
                 <h3>Cadastro de Clientes</h3>
 
                 <small id="nomeErro" v-show="deuErro">O nome é inválido, tente novamente!</small> <br>
