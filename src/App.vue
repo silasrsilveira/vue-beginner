@@ -23,7 +23,6 @@
 
 <script>
 import Cliente from './components/Cliente';
-//import Produto from './components/Produto';
 export default {
     name: 'App',
     data(){
@@ -72,6 +71,7 @@ export default {
         this.clientes = novoArray;
       }
      }
+     
   } 
 
 </script>

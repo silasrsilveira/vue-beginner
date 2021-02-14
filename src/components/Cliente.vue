@@ -4,7 +4,7 @@
         <hr>
         <p>{{cliente.descricao}}</p>
         <hr>
-        <p>Email: {{cliente.email}}</p>
+        <p>Email: {{cliente.email | processarEmail}}</p>
         <p v-if="showIdade === true">Idade: {{cliente.idade}}</p>
         <p v-else>O usuario escondeu a Idade!</p>
 
@@ -46,7 +46,12 @@ export default {
                 alert("Isso é um alert!")
 
             }
-        }
+        },
+        filters:{
+       processarEmail: function(value){
+         return value.toUpperCase();
+       }
+     }
 }
 
 </script>
