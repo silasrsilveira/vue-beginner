@@ -11,6 +11,8 @@
     <button @click="mudarCor($event)">Mudar cor!</button>
     <button @click="emitirEventoDelete">Deletar</button>
 
+    <h4>Id especial: {{idEspecial}}</h4>
+
        </div>
    
     
@@ -51,6 +53,12 @@ export default {
        processarEmail: function(value){
          return value.toUpperCase();
        }
+     },
+
+     computed: {
+         idEspecial: function(){
+            return (this.cliente.nome + this.cliente.email + this.cliente.id).toUpperCase();
+         }
      }
 }
 
